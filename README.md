@@ -13,6 +13,11 @@ See [/etc/apache2/sites-enabled/nextcloud.conf](https://github.com/makayabou/ins
 
 I can't access to http://localhost/nextcloud    but I can access https://localhost/nextcloud, so it seems that I configured nextcloud with SSL . I'm not very sure it's well done, I don't really understand how ssl works.
 
+I catch indeed that error in error.log of apache2:
+''''
+[authz_core:error] [pid 16191] [client ::1:38558] AH01630: client denied by server configuration: /var/www/nextcloud/data/.ocdata
+'''
+
 I created my autosigned certificat using: 
 ```bash
 sudo openssl req -new -x509 -days 365 -nodes -out /etc/ssl/localcerts/apache.pem -keyout /etc/ssl/localcerts/apache.key
